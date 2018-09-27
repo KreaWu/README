@@ -1,0 +1,9 @@
+父窗口添加
+<input type="hidden" id="s"/>
+子窗口
+window.parent.docuent.getElementById("s").value=s;
+父窗口获得传的值
+var str = document.getElementById("s").value;
+
+
+一般比较常用的方法是先往后台传，然后在返回到父页面。也还可以放到session里。在父页面取出来就可以了
