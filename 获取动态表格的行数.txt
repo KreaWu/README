@@ -1,0 +1,62 @@
+1、给你的table加一个id。
+2、在form里添加一个隐藏项。
+3、在页面向php提交数据时候，这里假设使用post方法。用js获取table的行数，添加到隐藏域里。
+给你一个例子，动态添加的也一样可以取到行数。
+不明白再问吧。
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script language="javascript">
+function getRows()
+{
+var t = document.getElementById("tt");
+var h = document.getElementById("hiddenCount");
+h.value = t.rows.length;
+alert(t.rows.length);
+return true;
+}
+</script>
+</head>
+<body>
+<table width="200" border="1" id="tt">
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</table>
+<form id="form1" name="form1" method="post" action="test.php" onsubmit="return getRows();">
+<input name="hiddenCount" type="hidden" id="hiddenCount" />
+<input type="submit" name="Submit2" value="提交" />
+</form>
+</body>
+</html>
